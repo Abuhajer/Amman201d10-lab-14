@@ -16,6 +16,9 @@ function loadCart() {
 function renderCart() {
   loadCart();
   clearCart();
+  let counterElm=document.getElementById('itemCount');
+  localStorage.setItem('counter',cart.items.length);
+  counterElm.textContent=`${localStorage.getItem('counter')}`;
   showCart();
 }
 
@@ -55,6 +58,7 @@ function showCart() {
   trElm.appendChild(tdElmQuantity);
   trElm.appendChild(tdElmItem);
   }
+  table.style.display='block';
 }
 
 function removeItemFromCart(event) {

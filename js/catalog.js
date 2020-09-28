@@ -4,7 +4,11 @@
 
 // Set up an empty cart for use on this page.
 var cart = new Cart([]);
-
+loadCart() ;
+function loadCart() {
+  var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+  cart = new Cart(cartItems);
+}
 // On screen load, we call this method to put all of the busmall options
 // (the things in the Product.allProducts array) into the drop down list.
 function populateForm() {
@@ -32,6 +36,7 @@ function handleSubmit(event) {
   cart.saveToLocalStorage();
   updateCounter();
   updateCartPreview();
+  divElm.style.display='block';
 
 }
 
@@ -52,7 +57,8 @@ function addSelectedItemToCart() {
 function updateCounter() {
   
   let counterElm=document.getElementById('itemCount');
-  counterElm.textContent=`${cart.items.length}`;
+  localStorage.setItem('counter',cart.items.length);
+  counterElm.textContent=`${localStorage.getItem('counter')}`;
 
 }
 
@@ -70,7 +76,6 @@ function updateCartPreview() {
   let liElm=document.createElement('li');
   ulElm.appendChild(liElm);
   liElm.textContent=`${quan}:${selectedElement}`;
-
 }
 
 // Set up the "submit" event listener on the form.
@@ -81,4 +86,6 @@ var catalogForm = document.getElementById('catalog');
 
 // Before anything else of value can happen, we need to fill in the select
 // drop down list in the form.
+if(cart.items.length!==0)
+updateCounter();
 populateForm();

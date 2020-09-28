@@ -4,43 +4,73 @@ h1{
     font-family: emoji;
     text-align: center;
     height: 93px;
+padding-top: 20px;
+border:1px solid black;
+
 }
 
 
-ul{
+main ul{
     list-style: none;
-    position: absolute;
+    position: relative;
     font-size: larger;
-    left: 2cm;
-    /* display: inline-flex; */
+    border: 1px solid black;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.589);
+    left: 50%;
+    padding:30px;
+    width: 300px;
+    top: -150px;
+    font-size:  xx-large;
+}
+main ul li {
+    padding: 10px;
 }
 
 .copy{
     padding: 30px;
-    font-size: x-large;
-    color: darkcyan;
+    color: black;
+   
 }
-
+#cartContents{
+    display:none;
+}
 .card{
-    padding: 30px;
-    font-size: x-large;
-    color: #2239d8;
+    padding: 10px;
+    color: black;
+}
+.card h1{
+    font-size: xx-large;
+    padding-top: 40px;
+}
+legend{
+padding: 10px;
+color: black;
+font-weight: bolder;
+}
+form {
+    text-align: left;
+    border: 1px solid black;
+    padding: 20px;
+    width: 40%;
+    background-color: white;
 }
 
- p{
+ main p{
     position: absolute;
     top: 96%;
     /* text-align: center; */
-    left: 50%;
+    left: 50;
 }
 nav ul {
     list-style: none;
     position: absolute;
     font-size: larger;
     left: 1cm;
-    padding: 23px;
-    top: 10%;
-    font-size: x-large;
+    padding: 50px;
+    top: 5%;
+    list-style: none;
+    font-size:  x-large;
 }
 nav ul li{
   padding-left: 20px;
@@ -49,11 +79,31 @@ nav ul li{
 
 }
 body{
-    background-color: antiquewhite;
+    background-color: ivory;
 }
 nav ul li a{
     padding-left: 20px;
     display: inline-block;
     text-decoration: none;
   
+  }
+  td:first-child:hover{
+      cursor: pointer;
+  }
+
+  
+table{
+    padding: 40px;
+}
+ th,td {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid black;
+  }
+
+  footer{
+      clear: both;
+      padding: 20px;
+      background-color: azure;
+      border:1px solid black;
   }
